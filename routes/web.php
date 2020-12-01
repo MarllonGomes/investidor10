@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::name('web.')->group(function() {
+    Route::get('/', [App\Http\Controllers\Web\ArticlesController::class,'index'])->name('home');
+    Route::get('/artigo/{slug}',[App\Http\Controllers\Web\ArticlesController::class,'show'])->name('article');
+    Route::get('/categoria/{slug}',[App\Http\Controllers\Web\CategoriesController::class,'show'])->name('category');
 });
