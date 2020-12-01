@@ -13,9 +13,15 @@ class Categories extends Component
 
     public function mount()
     {
-        $currentCategorySlug = Route::getCurrentRoute()->parameters['slug'] ?? '';
+        $currentRouteObject = Route::getCurrentRoute();
+        $uri = $currentRouteObject->uri;
+        $slug = $currentRouteObject->parameters['slug'] ?? '';
+
+        if(strpos($uri,'categoria/') === false) {
+            $slug = '';
+        }
         
-        $this->currentCategorySlug = $currentCategorySlug;
+        $this->currentCategorySlug = $slug;
         $this->categories = Category::orderBy('name','asc')->get();
     }
 

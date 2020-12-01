@@ -18,7 +18,7 @@
             <p class="not-found">Não encontramos artigos para a sua busca.</p>
         @endforelse        
     </section>
-    <div class="pagination">
+    <div class="pagination-wrapper">
         {{ $articles->links() }}
     </div>
 
