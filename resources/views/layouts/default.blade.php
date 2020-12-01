@@ -9,6 +9,7 @@
     <link rel="icon" href="{{ asset('img/php.png') }}" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    @livewireStyles
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
 </head>
 <body>
@@ -53,5 +54,6 @@
         DESENVOLVIDO POR <a href="https://github.com/MarllonGomes">MARLLON GOMES</a>
     </footer>
     <script src="{{ asset('js/app.js') }}"></script>
+    @livewireScripts
 </body>
 </html>

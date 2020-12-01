@@ -1,5 +1,11 @@
 @extends('layouts.default')
 
+@section('title', 'Notícias')
+
+@section('sidebar')
+    @livewire('categories')
+@endsection
+
 @section('content')
     <section class="articles-grid">
         @forelse ($articles as $article)
@@ -10,11 +16,10 @@
             </article>
         @empty
             <p class="not-found">Não encontramos artigos para a sua busca.</p>
-        @endforelse
-
-        <div class="pagination">
-            {{ $articles->links() }}
-        </div>
+        @endforelse        
     </section>
+    <div class="pagination">
+        {{ $articles->links() }}
+    </div>
 
 @endsection

@@ -15,6 +15,10 @@ $color6: #FFFFFF;
 body {
     background-color: $color3;
     font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .main-header {
@@ -33,6 +37,11 @@ body {
         width: 1200px;
         max-width: 95%;
 
+        @media (max-width: 767px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
         .logo-area {
             .logo {
@@ -40,6 +49,10 @@ body {
                 font-weight: 700;
                 text-decoration: none;
                 color: $color1;
+
+                @media (max-width: 1030px) and (min-width: 768px) {
+                    font-size: 23px;
+                }
             }
         }
 
@@ -48,20 +61,52 @@ body {
             margin-left: auto;
             display: flex;
             align-items: center;  
+
+            @media (max-width: 767px) {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 20px 0;
+            }
             
             li {
                 margin-left: 20px;
+
+                @media (max-width: 1030px) and (min-width: 768px) {
+                    margin-left: 10px;
+                }
+
+                @media (max-width: 767px) {
+                    margin-left: 0;
+                    text-align: center;
+
+                    &+li {
+                        margin-top: 6px;
+                    }
+                }
 
                 a {
                     font-weight: 600;
                     color: $color1;
                     text-decoration: none;
+
+                    @media (max-width: 1030px) and (min-width: 768px) {
+                        font-size: 14px;
+                    }
                 }
             }
         }
 
         .form-area {
             margin-left: 40px;
+
+            @media (max-width: 1030px) and (min-width: 768px) {
+                margin-left: 20px;
+            }
+
+            @media (max-width: 767px) {
+                margin-left: 0;
+            }
             
             .input-group {
                 position: relative;
@@ -78,6 +123,16 @@ body {
                     color: $color1;
                     font-size: 16px;
                     line-height: 40px;
+
+                    @media (max-width: 1030px) and (min-width: 768px) {
+                        height: 35px;
+                        width: 200px;
+                        padding-right: 35px;
+                    }
+
+                    @media (max-width: 767px) {
+                        text-align: center;
+                    }
                 }
 
                 button {
@@ -88,6 +143,12 @@ body {
                     width: 40px;
                     margin-left: -50px;
                     z-index: 2;
+
+                    @media (max-width: 1030px) and (min-width: 768px) {
+                        margin-left: -40px;
+                        height: 35px;
+                        width: 35px;
+                    }
 
                     img {
                         width: 25px;
@@ -115,5 +176,126 @@ body {
         color: $color5;
         margin-left: 5px;
         text-decoration: none;
+    }
+}
+
+main {
+    padding: 20px 0;
+    flex: 1;
+
+    .container {
+        display: flex;
+        width: 1200px;
+        max-width: 95%;
+        margin: auto;
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .content {
+        flex: 3;
+    }
+}
+
+.categories-list {
+    list-style: none;
+    padding: 0;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $color2;
+    background-color: $color6;
+
+    @media (max-width: 767px) {
+        margin-bottom: 30px;
+        margin-right: 0;
+    }
+
+    li {
+        display: block;
+
+        a {
+            padding: 10px;
+            
+            display: block;
+            color: $color1;
+            text-decoration: none;
+            font-size: 14px;
+
+            &.active {
+                background-color: $color4;
+                font-weight: bold;
+                color: $color6;
+            }
+        }
+
+        & + li a {
+            border-top: 1px solid $color2;
+        }
+
+        
+    }
+}
+
+.articles-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    article {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        min-width: 250px;
+        margin-bottom: 20px;
+        padding: 20px 15px 60px;
+        background-color: $color6;
+        border-radius: 3px;
+        margin: 0 10px 20px 10px;
+        position: relative;
+
+        h1 {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            display: block;
+            text-align: left;
+            min-height: 60px;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.4;
+            color: $color1;
+            display: block;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        a {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            display: inline-block;
+            color: $color6;
+            background-color: $color4;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+            border-radius: 5px;
+            padding: 10px 35px;
+        }
     }
 }
