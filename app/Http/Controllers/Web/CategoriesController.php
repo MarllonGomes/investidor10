@@ -20,6 +20,7 @@ class CategoriesController extends Controller
         }        
 
         $articles = $category->articles()
+                            ->orderBy('created_at','desc')
                             ->when($searchQuery, function($q) use ($searchQuery) {
                                 $q->where('title','like',"%{$searchQuery}%");
                             })->paginate();
