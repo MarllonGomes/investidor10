@@ -23,9 +23,8 @@ class ArticlesController extends Controller
                         })
                         ->paginate();
 
-        $categories = Category::orderBy('name','asc')->get();
         
-        return view('pages.web.home', compact('articles','categories'));
+        return view('pages.web.home', compact('articles'));
     }
 
     public function show($articleSlug)
@@ -36,8 +35,6 @@ class ArticlesController extends Controller
             return redirect('/');
         }
 
-        $categories = Category::orderBy('name','asc')->get();
-
-        return view('pages.web.article', compact('article','categories'));
+        return view('pages.web.article', compact('article'));
     }
 }

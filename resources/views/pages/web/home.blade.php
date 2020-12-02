@@ -2,10 +2,6 @@
 
 @section('title', 'Notícias')
 
-@section('sidebar')
-    @livewire('categories')
-@endsection
-
 @section('content')
     <section class="articles-grid">
         @forelse ($articles as $article)
@@ -18,7 +14,7 @@
             <p class="not-found">Não encontramos artigos para a sua busca.</p>
         @endforelse        
     </section>
-    <div class="pagination-wrapper">
+    <div class="pagination-wraper">
         {{ $articles->links() }}
     </div>
 

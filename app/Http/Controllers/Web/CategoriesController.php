@@ -9,7 +9,8 @@ use Illuminate\View\View;
 
 class CategoriesController extends Controller
 {
-    public function show(string $categorySlug, Request $request) {
+    public function show(string $categorySlug, Request $request) 
+    {
         
         $searchQuery = $request->query('s');
         $category = Category::where('slug','=',$categorySlug)->first();
@@ -23,8 +24,7 @@ class CategoriesController extends Controller
                                 $q->where('title','like',"%{$searchQuery}%");
                             })->paginate();
 
-        $categories = Category::orderBy('name','asc')->get();
 
-        return view('pages.web.category', compact('articles','category','categories'));
+        return view('pages.web.category', compact('articles','category'));
     }
 }

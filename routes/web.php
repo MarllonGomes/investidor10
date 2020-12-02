@@ -18,3 +18,7 @@ Route::name('web.')->group(function() {
     Route::get('/artigo/{slug}',[App\Http\Controllers\Web\ArticlesController::class,'show'])->name('article');
     Route::get('/categoria/{slug}',[App\Http\Controllers\Web\CategoriesController::class,'show'])->name('category');
 });
+
+Route::name('admin.')->prefix('admin')->group(function() {
+    Route::get('/noticias',[App\Http\Controllers\Admin\ArticlesController::class,'index'])->name('articles');
+});

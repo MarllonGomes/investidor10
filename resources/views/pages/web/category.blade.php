@@ -2,10 +2,6 @@
 
 @section('title', 'Notícias Categoria: ' . $category->name)
 
-@section('sidebar')
-    @livewire('categories')
-@endsection
-
 @section('content')
     <section class="articles-grid">
         @forelse ($articles as $article)

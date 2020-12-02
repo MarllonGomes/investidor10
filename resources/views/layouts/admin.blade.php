@@ -27,7 +27,7 @@
                 </li>
             </ul>
             <div class="form-area">
-                <form action="" method="GET">
+                <form action="/" method="GET">
                     <div class="input-group">
                         <input type="search" name="s" value="{{ $_GET['s'] ?? '' }}" placeholder="Pesquisar Notícias...">
                         <button type="submit">
@@ -41,9 +41,6 @@
 
     <main>
         <div class="container">
-            <div class="sidebar">
-                @livewire('categories')
-            </div>
             <div class="content">
                 @yield('content')
             </div>
