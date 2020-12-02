@@ -14,4 +14,4 @@ Laradock
 
 ### Link de testes
 
-(https://investidor10.marllongomes.com)[https://investidor10.marllongomes.com]
+https://investidor10.marllongomes.com
