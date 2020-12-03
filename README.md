@@ -8,6 +8,7 @@ Laradock
 
 ### Executar em desenvolvimento
 ```
+    composer install
     cd laradock
     cp env-example .env
     docker-compose up -d nginx workspace mysql
